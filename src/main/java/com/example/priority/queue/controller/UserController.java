@@ -26,12 +26,16 @@ public class UserController {
 
     @PostMapping
     public Mono<Void> addUser(@RequestBody User user) {
+
         return this.priorityUserServcie.addUser(user).then();
+
     }
 
     @GetMapping
     public Flux<User> getUsers() {
-        return this.priorityUserServcie.getUser();
+
+        return this.priorityUserServcie.getUsers();
+        
     }
 
 }
